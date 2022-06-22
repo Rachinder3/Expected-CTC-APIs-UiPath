@@ -4,7 +4,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN pip -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE $PORT
 

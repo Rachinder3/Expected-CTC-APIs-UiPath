@@ -4,6 +4,7 @@ import joblib
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import numpy as np
+import os
 
 
 pipeline = joblib.load("pipeline_important.joblib")
@@ -85,7 +86,8 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = os.environ.get("PORT",5000)
+    app.run(debug=False, host="0.0.0.0",port=port)
 
 
 

@@ -65,10 +65,12 @@ def transform_via_uipath():
 def bulk_transform_via_uipath():
     if request.method == 'POST':
 
-        path = request.values.get("path")
-
+        # reading the json input
+        
+        input_string = request.values.get("input")
+        
         ######## reading the data
-        bulk_upload_df = pd.read_csv(path)
+        bulk_upload_df = pd.read_json(input_string)
 
 
         ######### transforming the data
